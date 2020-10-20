@@ -1,8 +1,284 @@
-body {
+*{
     margin: 0;
     padding: 0;
+
+    font-family: 'Roboto', sans-serif;
+}   
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+li {
+    text-decoration: none;
+    list-style: none;
 }
 
 header {
+    color: white;
     height: 100vh;
+    background-image:  url('img/bg-image1.png');
+    background-color: #2f3628;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header-top {
+    padding-top: 1%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.nav-menu {
+    font-size: 24px;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width: 1400px) {
+    .nav-menu {
+        width: 70%
+    }
+}
+
+.nav-menu a:not(:first-child):hover{
+    border-bottom: 2px solid black;
+}
+
+#menu {
+    position: fixed;
+    right: 10%;
+    font-size: 32px;
+    display: none;
+    cursor: pointer;
+    transition: right 0.5s;
+}
+ 
+/*Меню бургер*/
+@media screen and (max-width: 1280px) {
+    .nav-menu {
+        width: 25%;
+        right: -100%;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        border-radius: 25px;
+        transition: right 0.5s;
+    }
+    
+    .nav-menu a {
+        display: none;
+    }
+    #menu {
+        display: block;
+    }
+
+    .nav-menu.responsive #menu {
+        right: 2%;
+    }
+
+    .nav-menu.responsive {
+        background-color: rgb(90, 64, 16, 0.8);
+        right: 1%;
+    }
+
+
+    .nav-menu.responsive a {
+        display: block;
+        text-align: center;
+    }
+}
+
+.header-middle h3{
+    font-size: 35px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.header-middle p {
+    text-align: center;
+}
+
+.header-wrapper {
+    margin: 0 auto;
+    width: 80%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 32px;
+}
+
+.next-part{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    border: none;
+    background-color: #19BD9A;
+    position: relative;
+}
+
+.next-part span {
+    height: 4px;
+    display: block;
+    border-radius: 4px;
+    width: 30px;
+    background-color: white;
+    position: absolute;
+}
+
+.next-part span:nth-child(1) {
+    transform: rotate(-70deg);
+    top: 25px;
+    right: 5px;
+    
+}
+.next-part span:nth-child(2) {
+    transform: rotate(70deg);
+    top: 25px;
+    left: 5px;
+}
+
+/*ABOUT US*/
+.about-us {
+    height: 500px;
+    width: 60%;
+    color: #333B46;
+    margin: 0 auto;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-us-wrapper {
+    position: absolute;
+    top: 20%;
+    height: 80%;
+    display: flex;
+}
+
+.about-us-image {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+.about-us-text {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.about-us-text h3 {
+    padding: 5% 0; 
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+.about-us-text p {
+    padding: 5% 0; 
+}
+.about-us-text a {
+    text-align: center;
+    color: #333B46;
+    font-size: 16px;
+    margin-top: 5%;
+    width: 300px;
+    border: 1px solid grey;
+    border-radius: 25px;
+    padding: 10px 0;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .about-us {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .about-us {
+        width: 80%;
+    }
+}
+
+/*PORTFOLIO*/
+.portfolio {
+    height: auto;
+    background-color: #bbbbbb;
+    color: #333B46;
+}
+
+.portfolio-wrapper {
+    padding-top: 5%;
+    width: 90%;
+    height: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-text {
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+.portfolio-text h3 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    padding-bottom: 20px;
+}
+
+.portfolio-text p {
+    line-height: 150%;
+}
+
+.portfolio-images {
+    height: auto;
+}
+
+.portfolio-form {
+    height: 10%;
+    background-image: url("img/bg-image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.portfolio-form p {
+    padding-top: 50px;
+    text-align: center;
+    width: 70%;
+}
+
+.portfolio-form a {
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    margin-top: 5%;
+    width: 300px;
+    border: 1px solid white;
+    border-radius: 25px;
+    padding: 10px 0;
+    margin-bottom: 50px;
 }
