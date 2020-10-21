@@ -6,27 +6,55 @@ window.onload = function(){
 
     //For Portfolio
     openTab(event, 'All');
+    document.querySelector(".header-middle").classList.toggle('_active');
+    document.querySelector(".logo").classList.toggle('_active');
 }
 
 
 function openTab(evt, cityName) {
-    // Declare all variables
-    var i, tabcontent, tablinks;
-
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
+    var tabcontent = document.getElementsByClassName("tabcontent");
+    for (var i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
 
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
+    var tablinks = document.getElementsByClassName("tablinks");
+    for (var i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
 
-    // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(cityName).style.display = "grid";
     evt.currentTarget.className += " active";
 }
 
+function scrollTo(element, x) {
+    if (x === 'up') {
+        window.scroll({
+            left: 0,
+            top: -element.offsetTop, 
+            behavior: 'smooth'
+        });
+    } else if (x === 'down') {
+        window.scroll({
+            left: 0,
+            top: element.offsetTop, 
+            behavior: 'smooth'
+        });
+    } 
+   
+}
+var button = document.querySelector(".next-part");
+button.addEventListener('click', () => {
+    scrollTo(document.querySelector(".about-us"), 'down');
+})
+
+var button1 = document.querySelector(".up-button");
+button1.addEventListener('click', () => {
+    scrollTo(document.querySelector(".header-wrapper"), 'up');
+})
+
+
+window.addEventListener('scroll', function() {
+    var val = window.pageYOffset;
+    val = 50+(val / 5);
+    document.querySelector('.header').style.backgroundPositionY = val + '%';
+  });

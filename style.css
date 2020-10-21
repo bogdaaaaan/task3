@@ -20,7 +20,7 @@ header {
     background-image:  url('img/bg-image1.png');
     background-color: #2f3628;
     background-attachment: fixed;
-    background-position: center center;
+    background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -41,6 +41,9 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+
+
+
 
 @media screen and (max-width: 1400px) {
     .nav-menu {
@@ -97,6 +100,17 @@ header {
     }
 }
 
+.header-middle {
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.9s ease 0s;
+}
+
+.header-middle._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+}
+
 .header-middle h3{
     font-size: 35px;
     font-weight: 300;
@@ -105,6 +119,8 @@ header {
 
 .header-middle p {
     text-align: center;
+    font-size: 1.5em;
+    font-weight: 300;
 }
 
 .header-wrapper {
@@ -119,6 +135,14 @@ header {
 
 .logo {
     font-size: 32px;
+    transform: translate(0px, -120%);
+    opacity: 0;
+    transition: all 0.9s ease 0s;
+}
+
+.logo._active {
+    transform: translate(0px, 0px);
+    opacity: 1;
 }
 
 .next-part{
@@ -129,6 +153,7 @@ header {
     border: none;
     background-color: #19BD9A;
     position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .next-part span {
@@ -223,6 +248,41 @@ header {
     .about-us {
         width: 80%;
     }
+}
+
+.up-button  {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin-left: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: #19BD9A;
+    position: sticky;
+    bottom: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+
+.up-button span {
+    height: 2px;
+    display: block;
+    border-radius: 2px;
+    width: 30px;
+    background-color: white;
+    position: absolute;
+}
+
+.up-button  span:nth-child(1) {
+    transform: rotate(70deg);
+    top: 25px;
+    right: 5px;
+    
+}
+.up-button  span:nth-child(2) {
+    transform: rotate(-70deg);
+    top: 25px;
+    left: 5px;
 }
 
 /*PORTFOLIO*/
@@ -386,7 +446,7 @@ header {
 
 .portfolio-form {
     height: 10%;
-    background-image: url("img/bg-image.jpg");
+    background-image: linear-gradient(rgba(26, 80, 19, 0.6), rgba(35, 10, 180, 0.2)) ,url("img/bg-image.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
