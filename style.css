@@ -1,7 +1,6 @@
 *{
     margin: 0;
     padding: 0;
-
     font-family: 'Roboto', sans-serif;
 }   
 
@@ -65,6 +64,7 @@ header {
 /*Меню бургер*/
 @media screen and (max-width: 1280px) {
     .nav-menu {
+        z-index: 10;
         width: 25%;
         right: -100%;
         display: flex;
@@ -132,9 +132,9 @@ header {
 }
 
 .next-part span {
-    height: 4px;
+    height: 2px;
     display: block;
-    border-radius: 4px;
+    border-radius: 2px;
     width: 30px;
     background-color: white;
     position: absolute;
@@ -154,13 +154,20 @@ header {
 
 /*ABOUT US*/
 .about-us {
-    height: 500px;
+    min-height: 50vh;
     width: 60%;
     color: #333B46;
     margin: 0 auto;
     position: relative;
     align-items: center;
     justify-content: center;
+    margin-bottom: 50px;
+}
+
+@media screen and (max-height: 740px) {
+    .about-us {
+        min-height: 70vh;
+    }
 }
 
 .about-us-wrapper {
@@ -171,6 +178,7 @@ header {
 }
 
 .about-us-image {
+
     width: 40%;
     display: flex;
     justify-content: center;
@@ -181,6 +189,7 @@ header {
     flex-direction: column;
     justify-content: center;
     text-align: left;
+
 }
 
 .about-us-text h3 {
@@ -218,13 +227,13 @@ header {
 
 /*PORTFOLIO*/
 .portfolio {
-    height: auto;
+    min-height: 100vh;
     background-color: #bbbbbb;
     color: #333B46;
 }
 
 .portfolio-wrapper {
-    padding-top: 5%;
+    padding-top: 25px;
     width: 90%;
     height: 95%;
     margin: 0 auto;
@@ -250,8 +259,130 @@ header {
 }
 
 .portfolio-images {
-    height: auto;
+    margin-bottom: 50px;
 }
+
+.tab {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    border-bottom: 2px solid #19BD9A;
+}
+
+.tabcontent {
+    grid-template-columns: repeat(4, 24%);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 1%;
+    padding: 6px 12px;
+}
+
+.tabcontent {
+    animation: fadeEffect 1s;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.tab-card {
+    position: relative;
+}
+
+.tab-card:hover::before{
+    background-color: rgba(0,0,0,0.5);
+}
+
+.tab-card::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0);
+}
+
+.tab-card:hover .tab-card__description{
+    display: block;
+}
+
+.tab-card__description {
+    display: none;
+    position: absolute;
+    height: 80%;
+    width: 80%;
+    top: 10%;
+    left: 10%;
+
+}
+
+.tab-card__description h3{
+    color: #19BD9A;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    padding-top: 20%;
+}
+.tab-card__description span {
+    margin-top: 10%;
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #19BD9A;
+}
+.tab-card__description p{
+    color: white;
+    padding-top: 20%;
+}
+.tab-card__description div{
+    padding-top: 20%;
+    display: flex;
+    flex-direction: row;
+}
+.tab-card__description div button{
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    border: none;
+    height: 60px;
+    width: 60px;
+    margin: auto 5%;
+    padding: 20px;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 1024px) {
+    .tab-card__description div {
+        padding-top: 10%;
+    }
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
 
 .portfolio-form {
     height: 10%;
@@ -281,4 +412,24 @@ header {
     border-radius: 25px;
     padding: 10px 0;
     margin-bottom: 50px;
+}
+
+
+footer {
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.footer-wrapper h3{
+    margin-bottom: 4%;
+}
+.footer-wrapper p{
+    margin-bottom: 4%;
+}
+
+.footer-wrapper div {
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
 }
