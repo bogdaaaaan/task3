@@ -64,7 +64,7 @@ header {
     transition: right 0.5s;
 }
  
-/*Меню бургер*/
+
 @media screen and (max-width: 1280px) {
     .nav-menu {
         z-index: 10;
@@ -430,6 +430,7 @@ header {
     margin: auto 5%;
     padding: 20px;
     border-radius: 50%;
+    outline: none;
 }
 
 @media screen and (max-width: 1024px) {
@@ -514,6 +515,11 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+@media screen and (max-width: 1280px) {
+    .subscribe-buttons {
+        width: 70%;
+    }
+}
 
 .subscribe-buttons #email {
     width: 60%;
@@ -549,4 +555,3 @@ footer {
     display: grid;
     grid-template-columns: repeat(5, 20%);
 }
-

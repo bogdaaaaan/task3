@@ -34,3 +34,8 @@
 **Дополнительный балл** за адаптивную верстку под мобайл (меньше 560px) ИЛИ дисплеев шире 1600 пикселей (+ 1 полноценный media query).
 
 **Дополнительные 0,5 балла** за параллакс эффект (контейнер с изображением, либо другая комбинация слоев. пример [https://materializecss.com/parallax-demo.html](https://materializecss.com/parallax-demo.html)), (без сторонних библиотек, на чистом js+css).
+
+
+Validator check (23.10):
+    ![alt text](Screenshot_1.png "upload by file")
+    ![alt text](Screenshot_10.png "upload by url")
