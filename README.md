@@ -36,6 +36,6 @@
 **Дополнительные 0,5 балла** за параллакс эффект (контейнер с изображением, либо другая комбинация слоев. пример [https://materializecss.com/parallax-demo.html](https://materializecss.com/parallax-demo.html)), (без сторонних библиотек, на чистом js+css).
 
 
-Validator check (23.10):
-    ![alt text](Screenshot_1.png "upload by file")
-    ![alt text](Screenshot_10.png "upload by url")
+Validator check (24.10):
+    ![alt text](screenshots/Screenshot_1.png "upload by file")
+    ![alt text](screenshots/Screenshot_2.png "upload by url")
