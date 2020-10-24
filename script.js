@@ -1,6 +1,8 @@
+var menu = document.getElementById("menu");
+
 window.onload = function(){
     let x = document.querySelector("#my-nav-menu");
-    document.querySelector("#menu").onclick = function(){
+    menu.onclick = function(){
          x.classList.toggle('responsive');
     }
 
@@ -54,7 +56,19 @@ button1.addEventListener('click', () => {
 
 
 window.addEventListener('scroll', function() {
+    // parallax
     var val = window.pageYOffset;
     val = 50+(val / 5);
     document.querySelector('.header').style.backgroundPositionY = val + '%';
+
+    // menu
+    if ((window.pageYOffset > document.querySelector(".about-us").offsetTop)) {
+        if (window.pageYOffset < document.querySelector(".portfolio").offsetTop) {
+            menu.style.color =  "black";
+        } else {
+            menu.style.color =  "white";
+        }
+    } else {
+        menu.style.color =  "white";
+    }
   });
